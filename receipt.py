@@ -1,5 +1,6 @@
 import flask
 import argparse
+import time
 
 app = flask.Flask(__name__)
 
@@ -20,6 +21,7 @@ if __name__ == '__main__':
         return {
         "status":0,
         "receipt":{
+          "request_date_ms":str(int(time.time()) * 1000),
           "in_app":[
             {
                 "expires_date_ms":"1999999999999"
